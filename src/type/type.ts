@@ -10,8 +10,8 @@ interface link {
 }
 
 // Navbar Type ---
-interface navtype {
+export interface navtype {
   logo: image;
   links: link[];
-  icons: image;
+  icons: image[];
 }
