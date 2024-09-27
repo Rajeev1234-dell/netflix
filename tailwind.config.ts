@@ -29,6 +29,7 @@ const config: Config = {
         navlinks: "#BFBFBF",
         lightcolor: "#1A1A1A",
         icons: "#262626",
+        btncolor: "#E50000",
       },
       borderColor: {
         light: "#1F1F1F",

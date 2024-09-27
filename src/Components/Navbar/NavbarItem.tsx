@@ -7,8 +7,6 @@ type props = {
 };
 
 function NavbarItem({ items }: props) {
-  console.log("Items", items);
-
   return (
     <>
       {items?.map((item) => (
