@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @tailwind base;
 @tailwind components;
@@ -21,4 +23,24 @@
   img {
     @apply w-full h-auto object-cover
   }
+}
+
+@layer utilities {
+
+  .container .slick-slider .slick-prev {
+    @apply top-[95%] z-10 left-10
+  }
+
+  .container .slick-slider .slick-prev::before {
+    content: '';
+  }
+
+  .container .slick-slider .slick-next::before {
+    content: '';
+  }
+
+  .container .slick-slider .slick-next {
+    @apply top-[95%] right-10
+  }
+
 }

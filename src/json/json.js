@@ -8,7 +8,21 @@ export const navbar = {
     { label: "Subscriptions", url: "/" },
   ],
   icons: [
-    { src: "/images/icons/search.svg", alt: "notification" },
+    { src: "/images/icons/search.svg", alt: "search" },
     { src: "/images/icons/notification.svg", alt: "notification" },
+  ],
+};
+
+// HeroSection json -------
+export const hero = {
+  btn: {
+    label: "Play Now",
+    link: "/",
+    icon: "/images/icons/play.svg",
+  },
+  icons: [
+    { src: "/images/icons/Icon (1).svg", alt: "notification" },
+    { src: "/images/icons/Icon.svg", alt: "notification" },
+    { src: "/images/icons/Vector.svg", alt: "notification" },
   ],
 };

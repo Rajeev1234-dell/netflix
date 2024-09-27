@@ -7,7 +7,7 @@ type imgprops = {
 };
 
 function ImgComp({ src, alt }: imgprops) {
-  return <Image src={src} width={100} height={100} alt={alt} />;
+  return <Image src={src} width={100} height={100} alt={alt} unoptimized />;
 }
 
 export default ImgComp;
