@@ -33,3 +33,30 @@ export interface herotype {
 export interface abc {
   icons?: image[] | undefined;
 }
+
+//Trial Type --------
+export interface trialtype {
+  bgImage: string;
+  title: string;
+  desc: string;
+  btn: link;
+}
+
+//footer type -------
+
+interface icons {
+  img: string;
+  link: string;
+}
+
+interface footerlinks {
+  title: string;
+  links: link[];
+}
+export interface footertype {
+  options_links: footerlinks[];
+  social_icons: icons[];
+  copy_right: string;
+  policies: link[];
+  connect: string;
+}
