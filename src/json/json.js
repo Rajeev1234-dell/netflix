@@ -15,11 +15,11 @@ export const navbar = {
 
 // HeroSection json -------
 export const hero = {
-  btn: {
-    label: "Play Now",
-    link: "/",
-    icon: "/images/icons/play.svg",
-  },
+  // btn: {
+  //   label: "Play Now",
+  //   link: "/",
+  //   icon: "/images/icons/play.svg",
+  // },
   icons: [
     { src: "/images/icons/Icon (1).svg", alt: "notification" },
     { src: "/images/icons/Icon.svg", alt: "notification" },

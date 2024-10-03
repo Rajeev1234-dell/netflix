@@ -40,7 +40,19 @@
   }
 
   .container .slick-slider .slick-next {
-    @apply top-[95%] right-10
+    @apply top-[95%] right-[80px]
   }
 
+  .container .slick-slider .slick-list {
+    @apply me-[30px]
+  }
+
+  #slider-icon .slick-prev {
+    right: 100px !important;
+    /* left: unset; */
+  }
+
+  .container .slick-slider .slick-prev {
+    left: unset !important;
+  }
 }

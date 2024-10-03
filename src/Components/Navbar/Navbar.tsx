@@ -30,4 +30,3 @@ function Navbar({ navdata }: props) {
 }
 
 export default Navbar;
-

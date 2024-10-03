@@ -3,9 +3,11 @@ import Hero from "@/Components/HeroSection/Hero";
 import { useEffect, useState } from "react";
 import { getMovies, trendingMovies } from "@/Services/Service";
 import { hero } from "@/json/json";
+import Trending from "@/Components/TrendingSection/Trending";
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const [trend, setTrend] = useState([]);
 
   const moviesList = async () => {
     const res = await getMovies();
@@ -15,12 +17,20 @@ export default function Home() {
 
   const trendingmovie = async () => {
     const res = await trendingMovies();
-    console.log("Trending", res);
+    const { results } = res;
+
+    setTrend(results);
   };
 
   useEffect(() => {
     moviesList();
     trendingmovie();
   }, []);
-  return <Hero data={data} hero_icons={hero} />;
+
+  return (
+    <>
+      <Hero data={data} hero_icons={hero} />
+      <Trending data={data} />
+    </>
+  );
 }
