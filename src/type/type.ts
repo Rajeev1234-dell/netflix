@@ -41,3 +41,22 @@ export interface trialtype {
   desc: string;
   btn: link;
 }
+
+//footer type -------
+
+interface icons {
+  img: string;
+  link: string;
+}
+
+interface footerlinks {
+  title: string;
+  links: link[];
+}
+export interface footertype {
+  options_links: footerlinks[];
+  social_icons: icons[];
+  copy_right: string;
+  policies: link[];
+  connect: string;
+}

@@ -43,16 +43,24 @@
     @apply top-[95%] right-[80px]
   }
 
-  .container .slick-slider .slick-list {
-    @apply me-[30px]
-  }
-
   #slider-icon .slick-prev {
     right: 100px !important;
-    /* left: unset; */
   }
 
   .container .slick-slider .slick-prev {
     left: unset !important;
+  }
+
+  .feellook {
+    @apply inline-block relative;
+  }
+
+  .feellook::after {
+    content: '';
+    @apply absolute w-full h-[2px] bottom-[-3px] left-0 bg-[#0087ca] transform scale-x-0 origin-bottom-right transition-transform duration-200 ease-out;
+  }
+
+  .feellook:hover::after {
+    @apply transform scale-x-100 origin-bottom-left;
   }
 }

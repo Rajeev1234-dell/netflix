@@ -2,9 +2,10 @@
 import Hero from "@/Components/HeroSection/Hero";
 import { useEffect, useState } from "react";
 import { getMovies, trendingMovies } from "@/Services/Service";
-import { hero, trial } from "@/json/json";
+import { hero, trial, footer } from "@/json/json";
 import Trending from "@/Components/TrendingSection/Trending";
 import Trial from "@/Components/TrialSection/Trail";
+import Footer from "@/Components/Footer/Footer";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -32,7 +33,8 @@ export default function Home() {
     <>
       <Hero data={data} hero_icons={hero} />
       <Trending data={data} />
-      <Trial trialdata={trial}/>
+      <Trial trialdata={trial} />
+      <Footer footerdata={footer}/>
     </>
   );
 }
