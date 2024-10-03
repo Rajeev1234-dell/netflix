@@ -2,18 +2,19 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 import Button from "@/Components/Button/Button";
-import { herotype } from "@/type/type";
+import { abc, herotype } from "@/type/type";
 import ImgComp from "../ImageComponent/ImgComp";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { IoMdArrowForward } from "react-icons/io";
 
 type heroprops = {
-  data: any;
-  hero_icons: herotype;
+  data: herotype[];
+  hero_icons: abc;
 };
 
 function Hero({ data, hero_icons }: heroprops) {
-  function SampleNextArrow(props) {
+  console.log(hero_icons);
+  function SampleNextArrow(props: any) {
     const { className, style, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
@@ -22,7 +23,7 @@ function Hero({ data, hero_icons }: heroprops) {
     );
   }
 
-  function SamplePrevArrow(props) {
+  function SamplePrevArrow(props: any) {
     const { className, style, onClick } = props;
     return (
       <div
@@ -66,15 +67,15 @@ function Hero({ data, hero_icons }: heroprops) {
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center mt-[30px] gap-6 sm:gap-x-5 ">
                   <Button label="Play Now" />
-                  <div className="flex sm:gap-[10px] justify-evenly">
-                    {icons?.map((icon) => (
+                { icons && icons.length > 0 && <div className="flex sm:gap-[10px] justify-evenly">
+                    {icons?.map((icon: any) => (
                       <>
                         <div className="bg-black w-[56px] h-[56px] p-3.5 cursor-pointer rounded-lg">
                           <ImgComp alt={icon.src} src={icon.src} />
                         </div>
                       </>
                     ))}
-                  </div>
+                  </div>}
                 </div>
               </div>
             </div>

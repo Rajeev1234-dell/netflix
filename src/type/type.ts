@@ -9,11 +9,11 @@ interface link {
   url: string;
 }
 
-interface button {
-  label: string;
-  link: string;
-  icon?: string;
-}
+// interface button {
+//   label: string;
+//   link: string;
+//   icon?: string;
+// }
 
 // Navbar Type ---
 export interface navtype {
@@ -24,6 +24,12 @@ export interface navtype {
 
 // Hero Type -----
 export interface herotype {
-  btn: button;
-  icons: image[];
+  // btn?: button;
+  original_title?: string;
+  overview?: string;
+  backdrop_path?: string;
+}
+
+export interface abc {
+  icons?: image[] | undefined;
 }
