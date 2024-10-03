@@ -26,3 +26,14 @@ export const hero = {
     { src: "/images/icons/Vector.svg", alt: "notification" },
   ],
 };
+
+// trial Section ---------
+export const trial = {
+  bgImage: "/images/movies/Background.jpg",
+  title: "Start your free trial today!",
+  desc: "This is a clear and concise call to action that encourages users to sign up for a free trial of StreamVibe.",
+  btn: {
+    label: "Start a free Trial",
+    url: "/",
+  },
+};

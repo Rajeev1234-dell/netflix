@@ -33,3 +33,11 @@ export interface herotype {
 export interface abc {
   icons?: image[] | undefined;
 }
+
+//Trial Type --------
+export interface trialtype {
+  bgImage: string;
+  title: string;
+  desc: string;
+  btn: link;
+}
