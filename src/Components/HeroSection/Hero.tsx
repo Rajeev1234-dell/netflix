@@ -39,9 +39,10 @@ function Hero({ data, hero_icons }: heroprops) {
   let settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
     prevArrow: <SampleNextArrow />,
     nextArrow: <SamplePrevArrow />,
   };
@@ -50,7 +51,10 @@ function Hero({ data, hero_icons }: heroprops) {
 
   return (
     <>
-      <div className="container mt-[50px] overflow-hidden">
+      <div
+        className="container banner mt-[50px] overflow-hidden"
+        id="slider-banner"
+      >
         <Slider {...settings}>
           {data?.map((item: any, index: any) => (
             <div key={index}>
@@ -67,15 +71,17 @@ function Hero({ data, hero_icons }: heroprops) {
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center mt-[30px] gap-6 sm:gap-x-5 ">
                   <Button label="Play Now" />
-                { icons && icons.length > 0 && <div className="flex sm:gap-[10px] justify-evenly">
-                    {icons?.map((icon: any) => (
-                      <>
-                        <div className="bg-black w-[56px] h-[56px] p-3.5 cursor-pointer rounded-lg">
-                          <ImgComp alt={icon.src} src={icon.src} />
-                        </div>
-                      </>
-                    ))}
-                  </div>}
+                  {icons && icons.length > 0 && (
+                    <div className="flex sm:gap-[10px] justify-evenly">
+                      {icons?.map((icon: any) => (
+                        <>
+                          <div className="bg-black w-[56px] h-[56px] p-3.5 cursor-pointer rounded-lg">
+                            <ImgComp alt={icon.src} src={icon.src} />
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

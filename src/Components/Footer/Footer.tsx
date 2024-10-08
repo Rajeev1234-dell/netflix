@@ -12,7 +12,7 @@ type props = {
 function Footer({ footerdata }: props) {
   return (
     <footer className="container mt-[250px] mb-10">
-      <div className="flex flex-col lg:flex-row justify-between sm:gap-x-[150px] gap-[40px] border-2 border-b-gray pb-[100px] border-t-0 border-l-0 border-r-0">
+      <div className="flex flex-col lg:flex-row justify-between sm:gap-x-[150px] gap-[40px] border-2 border-b-icons pb-[100px] border-t-0 border-l-0 border-r-0">
         <div className="flex w-full sm:justify-between flex-wrap sm:flex-nowrap sm:gap-0 gap-[45px]">
           <FooterItem items={footerdata?.options_links} />
         </div>
