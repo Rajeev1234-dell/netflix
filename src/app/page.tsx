@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <Hero data={data} hero_icons={hero} />
-      <Trending data={data} />
+      <Trending data={trend} setData={setData} />
       <Trial trialdata={trial} />
       <Footer footerdata={footer} />
     </>

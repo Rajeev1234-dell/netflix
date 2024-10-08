@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Button from "@/Components/Button/Button";
 import { abc, herotype } from "@/type/type";
@@ -13,7 +13,6 @@ type heroprops = {
 };
 
 function Hero({ data, hero_icons }: heroprops) {
-  console.log(hero_icons);
   function SampleNextArrow(props: any) {
     const { className, style, onClick } = props;
     return (

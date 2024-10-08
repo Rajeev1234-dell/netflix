@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import Slider from "react-slick";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { IoMdArrowForward } from "react-icons/io";
 import { useRouter } from "next/navigation";
 
-export default function Trending({ data }: any) {
+export default function Trending({ data, setData }: any) {
   const router = useRouter();
 
   const handleEvent = (index: string) => {
     console.log(index);
-
     router.push(`movie/${index}`);
   };
 
@@ -45,6 +44,8 @@ export default function Trending({ data }: any) {
     );
   }
 
+  // console.log("API Data", data);
+
   let settings = {
     dots: true,
     infinite: true,
@@ -74,7 +75,7 @@ export default function Trending({ data }: any) {
           fontSize: "30px",
         }}
       >
-        _{/* {i + 1} */}
+        _
       </div>
     ),
     responsive: [
@@ -121,6 +122,7 @@ export default function Trending({ data }: any) {
       },
     ],
   };
+
   return (
     <div className="container mt-[180px]">
       <h2 className="mb-16">New Release Shows</h2>
