@@ -75,9 +75,14 @@ export type MovieData = {
   // Add other fields as necessary based on your API response
 };
 
+export interface castMember {
+  profile_path: string | null;
+  original_name: string;
+}
+
 export interface castDirector {
   id: string;
-  cast: any;
+  cast: castMember[];
   profile_path: string;
   original_name: string;
 }

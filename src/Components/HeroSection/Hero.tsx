@@ -52,7 +52,7 @@ function Hero({ data, hero_icons }: heroprops) {
   return (
     <>
       <div
-        className="container banner mt-[50px] overflow-hidden"
+        className="hero w-full banner mt-[50px] overflow-hidden"
         id="slider-banner"
       >
         <Slider {...settings}>

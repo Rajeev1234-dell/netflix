@@ -11,11 +11,20 @@ import { FaPlay } from "react-icons/fa6";
 type movieProps = MovieData | null;
 type directorProps = castDirector | null;
 
+type Trailer = {
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+};
+
+type TrailerResponse = Trailer[];
+
 function Page() {
   const [movieData, setMovieData] = useState<movieProps>(null);
   const [director, setDirector] = useState<directorProps>(null);
   const [popup, setPopup] = useState(false);
-  const [trialer, setTrialer] = useState<any>(null);
+  const [trialer, setTrialer] = useState<TrailerResponse>([]);
 
   const params = useParams();
 
@@ -46,6 +55,7 @@ function Page() {
     try {
       if (params.id) {
         const res = await getCastDirector(params.id);
+        // console.log("Director Response", res);
         setDirector(res);
         // console.log("Cast Director Data", res);
       }
@@ -109,8 +119,8 @@ function Page() {
 
       <div className="flex mt-20 gap-16">
         {director?.cast
-          ?.filter((_: any, index: number) => index < 6)
-          .map((item: directorProps, index: number) => {
+          ?.filter((_, index: number) => index < 6)
+          .map((item, index: number) => {
             return item?.profile_path ? (
               <div className="grid md:grid-rows-2 lg:grid-rows-1">
                 <div key={index} className="rounded-full min-w-40 min-h-40">

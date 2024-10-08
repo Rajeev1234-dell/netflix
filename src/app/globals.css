@@ -59,6 +59,14 @@
     content: '';
   }
 
+  .hero .slick-slider .slick-next::before {
+    content: '';
+  }
+
+  .hero .slick-slider .slick-prev::before {
+    content: '';
+  }
+
   .banner .slick-slider .slick-next {
     @apply top-[95%] sm:right-[80px] right-[50px]
   }
