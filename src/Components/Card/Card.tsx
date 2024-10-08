@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import ImgComp from "../ImageComponent/ImgComp";
 
 function Card({ img, title }: any) {
+
   return (
-    <div className="w-full h-auto p-[30px] border-icons border-[1px] rounded-lg bg-primary">
+    <div
+      className="w-[90%] sm:w-[90%] md:w-[90%] lg:w-[90%] h-auto p-[30px] border-icons border-[1px] rounded-lg bg-primary"
+    >
       <div className="rounded-xl">
         <ImgComp alt="" src={img} />
       </div>

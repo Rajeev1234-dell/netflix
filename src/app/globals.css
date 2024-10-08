@@ -27,8 +27,28 @@
 
 @layer utilities {
 
-  .container .slick-slider .slick-prev {
+  .banner .slick-slider .slick-prev {
     @apply top-[95%] z-10 left-10
+  }
+
+  .trending .slick-slider .slick-prev {
+    @apply z-10 md:right-[250px] right-['initial'] left-0 md:top-[-87px] top-[-50px]
+  }
+
+  .top-important {
+    top: -17px !important;
+  }
+
+  .trending .slick-slider .slick-next {
+    @apply md:top-[-87px] top-[-50px] sm:right-[80px] right-['initial'] left-[100px] md:left-[initial] md:right-[80px]
+  }
+
+  .trending .slick-slider .slick-dots {
+    @apply bg-white top-[-121px] right-[246px];
+  }
+
+  .trending .slick-slider .slick-dots>ul {
+    @apply flex;
   }
 
   .container .slick-slider .slick-prev::before {
@@ -39,16 +59,16 @@
     content: '';
   }
 
-  .container .slick-slider .slick-next {
-    @apply top-[95%] right-[80px]
+  .hero .slick-slider .slick-next::before {
+    content: '';
   }
 
-  #slider-icon .slick-prev {
-    right: 100px !important;
+  .hero .slick-slider .slick-prev::before {
+    content: '';
   }
 
-  .container .slick-slider .slick-prev {
-    left: unset !important;
+  .banner .slick-slider .slick-next {
+    @apply top-[95%] sm:right-[80px] right-[50px]
   }
 
   .feellook {
@@ -62,5 +82,9 @@
 
   .feellook:hover::after {
     @apply transform scale-x-100 origin-bottom-left;
+  }
+
+  .main {
+    @apply w-full h-full absolute top-0 left-0 bg-[rgba(0,0,0,0.8)] z-[2]
   }
 }

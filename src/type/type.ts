@@ -60,3 +60,29 @@ export interface footertype {
   policies: link[];
   connect: string;
 }
+
+//Get single Movie
+
+export type MovieData = {
+  adult?: boolean;
+  title?: string;
+  poster_path?: string;
+  backdrop_path?: string;
+  overview?: string;
+  tagline?: string;
+  original_language?: string;
+  runtime?: number;
+  // Add other fields as necessary based on your API response
+};
+
+export interface castMember {
+  profile_path: string | null;
+  original_name: string;
+}
+
+export interface castDirector {
+  id: string;
+  cast: castMember[];
+  profile_path: string;
+  original_name: string;
+}

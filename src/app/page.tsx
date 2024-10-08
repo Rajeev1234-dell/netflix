@@ -14,6 +14,8 @@ export default function Home() {
   const moviesList = async () => {
     const res = await getMovies();
     const { results } = res;
+    console.log(results, "Results");
+
     setData(results);
   };
 
@@ -34,7 +36,7 @@ export default function Home() {
       <Hero data={data} hero_icons={hero} />
       <Trending data={data} />
       <Trial trialdata={trial} />
-      <Footer footerdata={footer}/>
+      <Footer footerdata={footer} />
     </>
   );
 }
