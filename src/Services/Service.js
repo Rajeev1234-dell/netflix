@@ -10,90 +10,52 @@ const options = {
   },
 };
 
-//GET all movie data ------
+// fetch Data -------
+const fetchData = async (url) => {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("API Request Error", error);
+    throw error;
+  }
+};
+
+// GET all movie data
 export const getMovies = async () => {
-  try {
-    const response = await fetch(
-      `${baseURL}/movie/upcoming?language=en-US&page=1`,
-      options
-    );
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  const url = `${baseURL}/movie/upcoming?language=en-US&page=1`;
+  return fetchData(url);
 };
 
-//Trending Movie Data --------
+// Trending Movie Data
 export const trendingMovies = async () => {
-  try {
-    const response = await fetch(`${baseURL}/trending/movie/day`, options);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  const url = `${baseURL}/trending/movie/day`;
+  return fetchData(url);
 };
 
-//GET single Movie Data --------
+// GET single Movie Data
 export const getSingle = async (id) => {
-  try {
-    const response = await fetch(`${baseURL}/movie/${id}?api_key=${api_key}`);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  const url = `${baseURL}/movie/${id}?api_key=${api_key}`;
+  return fetchData(url);
 };
 
+// Get Cast and Director Data
 export const getCastDirector = async (id) => {
-  try {
-    const response = await fetch(`${baseURL}/movie/${id}/credits`, options);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+  const url = `${baseURL}/movie/${id}/credits`;
+  return fetchData(url);
 };
 
-// Get Trailer
+// Get Trailer Data
 export const getTrailer = async (id) => {
-  try {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/videos`,
-      options
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+  const url = `${baseURL}/movie/${id}/videos`;
+  return fetchData(url);
+};
 
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
+// Search Movies
+export const searchData = async (query) => {
+  const url = `${baseURL}/search/movie?query=${query}&api_key=${api_key}`;
+  return fetchData(url);
 };

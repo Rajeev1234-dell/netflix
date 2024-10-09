@@ -9,7 +9,7 @@ export const navbar = {
   ],
   icons: [
     { src: "/images/icons/search.svg", alt: "search" },
-    { src: "/images/icons/notification.svg", alt: "notification" },
+    // { src: "/images/icons/notification.svg", alt: "notification" },
   ],
 };
 
