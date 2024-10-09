@@ -1,14 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { navtype } from "@/type/type";
 import ImgComp from "../ImageComponent/ImgComp";
 import NavbarItem from "./NavbarItem";
+import { useRouter } from "next/navigation";
+import { searchData } from "@/Services/Service";
 
 type props = {
   navdata: navtype;
 };
 
 function Navbar({ navdata }: props) {
+  const [data, setData] = useState("");
   const { logo, links, icons } = navdata;
+  const router = useRouter();
+
+  const handlePrint = async () => {
+    router.push(`/search?query=${data}`);
+    setData("");
+  };
 
   return (
     <nav className="container py-[1.875rem] flex justify-between items-center ">
@@ -19,8 +29,15 @@ function Navbar({ navdata }: props) {
         <NavbarItem items={links} />
       </div>
       <div className="cursor-pointer flex sm:gap-[30px] gap-2.5">
-        {icons?.map((icon) => (
-          <div className="w-[34px] h-auto">
+        <input
+          onChange={(event) => setData(event.target.value)}
+          value={data}
+          type="text"
+          placeholder="Search Movie"
+          className="rounded-full px-5 border-none outline-none"
+        />
+        {icons?.map((icon, index) => (
+          <div className="w-[34px] h-auto" onClick={handlePrint} key={index}>
             <ImgComp src={icon.src} alt={icon.alt} />
           </div>
         ))}

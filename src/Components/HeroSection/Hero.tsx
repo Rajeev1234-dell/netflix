@@ -13,7 +13,6 @@ type heroprops = {
 };
 
 function Hero({ data, hero_icons }: heroprops) {
-  console.log(hero_icons);
   function SampleNextArrow(props: any) {
     const { className, style, onClick } = props;
     return (
