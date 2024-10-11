@@ -1,40 +1,66 @@
-// app/page.js (or app/posts/page.js if it's a nested route)
+// "use client";
+// import { movieList, searchData } from "@/Services/Service";
+// import React, { useEffect, useState } from "react";
+
+// function page() {
+//   const [input, setInput] = useState("");
+//   const [res, setResults] = useState([]);
+
+//   const fetchData = async (value: string) => {
+//     const result = await movieList();
+//     const { results } = result;
+
+//     const data = results.filter((user: any) => {
+//       return (
+//         value &&
+//         user &&
+//         user.original_title &&
+//         user.original_title.toLowerCase().includes(value)
+//       );
+//     });
+//     setResults(data);
+//   };
+
+//   const handleInput = (event: any) => {
+//     setInput(event.target.value);
+//     fetchData(event.target.value);
+//   };
+
+//   const handClick = (value) => {
+//     setInput(value);
+//     setResults([]);
+//   };
+
+//   return (
+//     <div className="container">
+//       <input type="text" onChange={handleInput} value={input} />
+//       <div>
+//         {res && res.length > 0
+//           ? res?.map((item, index) => (
+//               <div
+//                 key={index}
+//                 className="text-red-700"
+//                 onClick={() => handClick(item?.original_title)}
+//               >
+//                 {item.original_title}
+//               </div>
+//             ))
+//           : ""}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default page;
+
 import React from "react";
 
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-};
+async function page() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log("Response Data", data);
 
-// Server Component - Fetching data on the server
-const Page = async () => {
-  // Using async/await directly in Server Component
-  let data: Post[] = [];
-  try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    data = await res.json();
-  } catch (error) {
-    console.log(error);
-  }
-  //   const data = await res.json();
+  return <div></div>;
+}
 
-  //   console.log("Fetched Data:", data); // You can log the data in the server log
-
-  return (
-    <div className="container">
-      <h2>Fetched Posts</h2>
-      <ul>
-        {data.length > 0
-          ? data.map((item: any) => (
-              <li key={item.id} className="text-white">
-                {item.title}
-              </li>
-            ))
-          : ""}
-      </ul>
-    </div>
-  );
-};
-
-export default Page;
+export default page;

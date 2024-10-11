@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { IoMdArrowForward } from "react-icons/io";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Trending({ data }: any) {
   const router = useRouter();
@@ -140,6 +141,14 @@ export default function Trending({ data }: any) {
             </div>
           ))}
         </Slider>
+      </div>
+      <div className="flex justify-center mt-14">
+        <Link
+          href="/movielist"
+          className="hover:text-white text-zinc-200 bg-lightcolor border-2 border-zinc-200 px-9 py-4 rounded-2xl font-medium hover:bg-red-500 hover:border-black"
+        >
+          See More
+        </Link>
       </div>
     </div>
   );
