@@ -5,6 +5,7 @@ import ImgComp from "../ImageComponent/ImgComp";
 import NavbarItem from "./NavbarItem";
 import { useRouter } from "next/navigation";
 import { searchData } from "@/Services/Service";
+import Link from "next/link";
 
 type props = {
   navdata: navtype;
@@ -23,7 +24,9 @@ function Navbar({ navdata }: props) {
   return (
     <nav className="container py-[1.875rem] flex justify-between items-center ">
       <div className="w-[198px] h-auto cursor-pointer">
-        <ImgComp src={logo?.src} alt={logo?.alt} />
+        <Link href="/">
+          <ImgComp src={logo?.src} alt={logo?.alt} />
+        </Link>
       </div>
       <div className="hidden border-2 border-light rounded-xl lg:flex p-2.5">
         <NavbarItem items={links} />
@@ -37,7 +40,7 @@ function Navbar({ navdata }: props) {
           className="rounded-full px-5 border-none outline-none"
         />
         {icons?.map((icon, index) => (
-          <div className="w-[34px] h-auto" onClick={handlePrint} key={index}>
+          <div className="w-[34px] h-auto" key={index} onClick={handlePrint}>
             <ImgComp src={icon.src} alt={icon.alt} />
           </div>
         ))}

@@ -59,3 +59,10 @@ export const searchData = async (query) => {
   const url = `${baseURL}/search/movie?query=${query}&api_key=${api_key}`;
   return fetchData(url);
 };
+
+//Movie list
+export const movieList = async () => {
+  // const url = `https://api.themoviedb.org/3/genre/movie/list&api_key=${api_key}`;
+  const url = "https://api.themoviedb.org/3/movie/popular";
+  return fetchData(url);
+};
