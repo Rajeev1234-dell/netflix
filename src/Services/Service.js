@@ -62,7 +62,12 @@ export const searchData = async (query) => {
 
 //Movie list
 export const movieList = async () => {
-  // const url = `https://api.themoviedb.org/3/genre/movie/list&api_key=${api_key}`;
   const url = "https://api.themoviedb.org/3/movie/popular";
+  return fetchData(url);
+};
+
+//Paginated Movie List -------
+export const paginationList = (no) => {
+  const url = `${baseURL}/trending/all/day?api_key=${api_key}&page=${no}`;
   return fetchData(url);
 };

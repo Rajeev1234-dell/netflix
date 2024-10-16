@@ -144,7 +144,7 @@ export default function Trending({ data }: any) {
       </div>
       <div className="flex justify-center mt-14">
         <Link
-          href="/movielist"
+          href="/movielist/:id"
           className="hover:text-white text-zinc-200 bg-lightcolor border-2 border-zinc-200 px-9 py-4 rounded-2xl font-medium hover:bg-red-500 hover:border-black"
         >
           See More
