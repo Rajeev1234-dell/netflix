@@ -1,15 +1,25 @@
 import React from "react";
 
-interface PageProps {
-  params: {
-    id: string; // This will be the dynamic parameter from the URL
-  };
+async function page() {
+  const res = await fetch(
+    "https://api.themoviedb.org/3/trending/all/day?api_key=2b86f2a0e2ef98181891acf9070b6f88&page=2"
+  );
+  const data = await res.json();
+
+  const { results } = data;
+
+  console.log("Data 3", results.length0);
+
+  return (
+    <div className="container">
+      <h2>hello</h2>
+      {results && results.length > 0
+        ? results?.map((item, index) => {
+            return <p>{item?.title}</p>;
+          })
+        : ""}
+    </div>
+  );
 }
 
-const Page = ({ params }: PageProps) => {
-  console.log(params.id);
-
-  return <h2>Post ID: {params.id}</h2>;
-};
-
-export default Page;
+export default page;
